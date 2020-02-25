@@ -19,4 +19,4 @@
 5. Test your app by pointing your browser to http://localhost
 
 ### Note: You may use your local repo `qa-test` directory to update the codes.
-### For Windows users; you may refer to this link for docker tools installation https://docs.docker.com/toolbox/toolbox_install_windows/
+### For Windows users, you may refer to this link for docker tools installation https://docs.docker.com/toolbox/toolbox_install_windows/
