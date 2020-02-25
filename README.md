@@ -15,3 +15,5 @@
 3. You are now ready to deploy your development environment to your local PC by running;
 * `$ docker-compse up -d`
 4. Test your app by pointing your browser to http://localhost
+
+### Note: You may use your local repo `qa-test` directory to update the codes.
