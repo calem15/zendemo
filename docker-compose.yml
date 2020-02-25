@@ -1,0 +1,43 @@
+version: "3.1"
+services:
+
+    redis:
+      image: redis:alpine
+      container_name: ${SERVER_ENV}-redis
+      network_mode: host
+
+    postgres:
+      image: postgres:9.5-alpine
+      container_name: ${SERVER_ENV}-postgres
+      volumes:
+         - "./source/postgres:/var/lib/postgresql/data"
+      environment:
+        - POSTGRES_USER=${POSTGRES_USER}
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+        - POSTGRES_DB=${POSTGRES_DB}
+      ports:
+       - "5432:5432"
+      network_mode: host
+
+    webserver:
+      image: nginx:alpine
+      container_name: ${SERVER_ENV}-webserver
+      working_dir: /qa-test
+      volumes:
+          - ./qa-test:/qa-test
+          - ./source/nginx:/etc/nginx/conf.d
+      ports:
+       - "80:80"
+      network_mode: host
+
+    php-fpm:
+      build: source/php-fpm
+      container_name: ${SERVER_ENV}-php-fpm
+      working_dir: /qa-test
+      volumes:
+        - ./qa-test:/qa-test
+        - ./source/php-fpm/php-ini-overrides.ini:/etc/php/7.1/fpm/conf.d/99-overrides.ini
+      command: >
+          bash -c "php artisan migrate:refresh --seed
+          && php artisan serve"
+      network_mode: host
