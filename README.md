@@ -14,4 +14,4 @@
 * `$ git clone git@github.com:zenrooms/qa-test.git`
 3. You are now ready to deploy your development environment to your local PC by running;
 * `$ docker-compse up -d`
-4. Test your app by pointing your browser to `http://localhost`
+4. Test your app by pointing your browser to http://localhost
