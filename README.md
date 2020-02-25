@@ -24,7 +24,7 @@
 #### `.env` file contains environment for setting up postgres DB & server_env variable
 #### There should be 4 docker containers running;
 ##### `SERVER_ENV=qatest-dev`
-* ${SERVER_ENV}-php-fpm
+* ${SERVER_ENV}-php
 * ${SERVER_ENV}-webserver
 * ${SERVER_ENV}-redis
 * ${SERVER_ENV}-postgres
