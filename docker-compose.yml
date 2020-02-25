@@ -32,7 +32,7 @@ services:
 
     php-fpm:
       build: source/php-fpm
-      container_name: ${SERVER_ENV}-php-fpm
+      container_name: ${SERVER_ENV}-php
       working_dir: /qa-test
       volumes:
         - ./qa-test:/qa-test
