@@ -18,5 +18,13 @@
 * `$ docker ps -a | grep qatest-dev`
 5. Test your app by pointing your browser to http://localhost
 
-### Note: You may use your local repo `qa-test` directory to update the codes.
-### For Windows users, you may refer to this link for docker tools installation https://docs.docker.com/toolbox/toolbox_install_windows/
+### Note:
+#### You may use your local repo `qa-test` directory to update the codes.
+#### For Windows users, you may refer to this link for docker tools installation https://docs.docker.com/toolbox/toolbox_install_windows/
+#### `.env` file contains environment for setting up postgres DB & server_env variable
+#### There should be 4 docker containers running;
+##### `SERVER_ENV=qatest-dev`
+* ${SERVER_ENV}-php-fpm
+* ${SERVER_ENV}-webserver
+* ${SERVER_ENV}-redis
+* ${SERVER_ENV}-postgres
